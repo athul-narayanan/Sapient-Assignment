@@ -1,0 +1,16 @@
+<div class="col-12 slideBar">
+   <div class="col-12">
+       <h5 class="mediumFont">Filters</h5>
+   </div>
+   <ng-container *ngFor="let item of searchFilters;let i=index">
+     
+         <div class="centerAlign">{{getInReadableForm(item.key)}}</div>
+         <div class="col-12 buttonCenter" *ngFor="let filter of item.values;let j=index">
+            <ng-container *ngIf="j%2==0">
+                <button class="filterButton" [class.selectedOption]="item.selected == item.values[j]" *ngIf="item.values[j] !== undefined" (click)="setSelectedFilter(item,j)">{{item.values[j]}}</button>
+                <button class="filterButton" [class.selectedOption]="item.selected == item.values[j+1]" *ngIf="item.values[j+1] !== undefined" (click)="setSelectedFilter(item,j+1)">{{item.values[j+1]}}</button>
+            </ng-container>
+        </div>
+
+   </ng-container>
+</div>

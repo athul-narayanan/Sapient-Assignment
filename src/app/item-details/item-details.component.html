@@ -1,0 +1,50 @@
+<ng-template #noContent>
+    <div class="col-12 mediumFont">
+        No result found....
+    </div>
+</ng-template>
+<div class="col-12 row container mainPage">
+    <div class="col-12">
+       <h4 class="bigFont">Spacex Launch Programs</h4>
+    </div>
+    <div class="col-2 slideBar mainSlideBar">
+        <div class="col-12 card">
+            <app-filter-slide (itemDetails)="setItemDetails($event)"></app-filter-slide>
+        </div>
+    </div>
+    <div class="col-10 itemsClass row cardAlignment" *ngIf="itemList.length">
+            <div class="col-3 descCard" *ngFor="let item of itemList| paginate: { itemsPerPage: 8, currentPage: p };let i=index">
+                <div class="col-12 card fullheight" >
+                    <img class="contentImage" [src]="item.links.mission_patch">
+                    <div class='satName textAlign'>{{item.mission_name}} # {{i+1}}</div>
+                    <div class="textAlign">
+                        <div class="bigFont">Mission Ids:</div> 
+                        <div class="missionIdStyle" *ngFor="let missionId of item.mission_id">
+                          {{missionId}}
+                        </div>
+                    </div>
+                    <div class="textAlign">
+                        <div class="bigFont"><span>Launch Year : </span><span>{{item?.launch_year}}</span></div>
+                    </div>
+                    <div class="textAlign">
+                        <div> <span class="bigFont">Successful Launch : </span> <span>{{item?.launch_success}}</span></div>
+                    </div>
+                    <div class="textAlign"><span class="bigFont">Successful Landing :</span><span>{{item.launch_success}}</span></div>       
+            </div>
+            </div>
+    </div>
+    <div class="col-12" *ngIf="itemList.length">
+        <pagination-controls class="paginationStyle" (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div class="col-10" *ngIf="!itemList.length">
+        <ng-container *ngTemplateOutlet="noContent"></ng-container>
+    </div>
+    <div class="col-12">
+        <div class="list">
+            
+        </div>
+    </div>
+    <div class="col-12">
+        <h6 class="mediumFont centerAlign">Developed By : {{developer}}</h6>
+    </div>
+</div>
