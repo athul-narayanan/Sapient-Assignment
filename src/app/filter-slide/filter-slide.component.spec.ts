@@ -41,4 +41,10 @@ describe('FilterSlideComponent', () => {
     expect(itemDetail).toEqual(itemArray)
   })
 
+  it('Check snake case is getting converted into normal format',()=>{
+    let readableFormat = component.getInReadableForm("search_item");
+
+    expect(readableFormat).toEqual("search item");
+  })
+
 });
