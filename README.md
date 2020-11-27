@@ -1,4 +1,8 @@
-# Sapient-Assignment
+# Spacex Launch Program
+
+This project is designed to get informations regarding spacex launch program. We are showing Informations such as Launch year , Launching and landing status along with mission id,
+
+Here users are allowded to filter details based on launch year , landing and launching status.
 
 Get started
 Clone the repo
