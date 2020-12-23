@@ -4,7 +4,7 @@ This project is designed to get informations regarding spacex launch program. We
 
 Here users are allowded to filter details based on launch year , landing and launching status.
 
-![Spacex Program] (https://github.com/athul-narayanan/Sapient-Assignment/blob/main/desktopview.png)
+![alt text](https://github.com/athul-narayanan/Sapient-Assignment/blob/main/desktopview.png)
 
 Get started
 Clone the repo
